@@ -16,6 +16,8 @@ namespace LightInjectDemo.Controllers
 		[HttpGet]
 		public string Message()
 		{
+			// I would expect that here, _messageProvider.Message would contain the value
+			// that was set in Global.asax.cs Application_BeginRequest()
 			return $"Message: '{_messageProvider.Message}'";
 		}
 	}

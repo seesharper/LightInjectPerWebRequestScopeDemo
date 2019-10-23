@@ -13,6 +13,8 @@ namespace LightInjectDemo
 
 		protected void Application_BeginRequest()
 		{
+			// I would expect that this value would be consistently anywhere that I get
+			// an instance of `IMessageProvider` (assuming it's not re-set elsewhere)
 			var injected = WebApiConfig.ServiceContainer.GetInstance<IMessageProvider>();
 			injected.Message = "From Global.asax Application_BeginRequest";
 		}
